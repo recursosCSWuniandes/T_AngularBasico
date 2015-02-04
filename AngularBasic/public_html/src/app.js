@@ -1,11 +1,9 @@
 (function () {
 	var userModule = angular.module('userModule', ['MockModule','CrudModule']);
+	
+	var userConfig = App.Utils.loadConfiguration("./src/modules/user/config/userConfig.json");
 
-	userModule.constant('myConfig', {
-		host: "localhost",
-		port: "8383",
-		context: "/AngularBasic/webresources/users"
-	});
+	userModule.constant('myConfig', userConfig);
 	
 	userModule.config(['myConfig', 'apiUrlFactoryProvider', function (myConfig, apiUrlFactoryProvider) {
 			apiUrlFactoryProvider.setUrlParameters(myConfig);

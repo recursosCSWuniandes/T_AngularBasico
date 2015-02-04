@@ -1,0 +1,5 @@
+{
+	"host": "localhost",
+	"port": "8383",
+	"context": "/AngularBasic/webresources/users"
+}
