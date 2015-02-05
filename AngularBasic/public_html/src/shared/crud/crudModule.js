@@ -1,3 +1,6 @@
 (function() {
-	angular.module('CrudModule', ['ngResource']);
+	var crud = angular.module('CrudModule', ['ngResource']);
+	crud.run(['CRUDService',function(crudService){
+			crudService.fetchRecords();
+	}]);
 })();

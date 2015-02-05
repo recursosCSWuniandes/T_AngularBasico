@@ -1,5 +1,5 @@
-<div class='container' ng-controller="CRUDController as ctrl">
-	<form role='form' name='userForm' ng-submit="userForm.$valid && ctrl.saveRecord()">
+<div class='container' ng-controller="userController as ctrl">
+	<form role='form' name='userForm' ng-submit="userForm.$valid && saveRecord()">
 		<div class='form-group' >
 			<label for='firstName'>Nombres</label>
 			<input type='text' class='form-control' id='firstName' placeholder='Enter value' ng-model="currentRecord.firstName" required/>

@@ -1,15 +1,15 @@
 (function () {
 	var app = angular.module('userModule');
 
-	app.controller('userController', ['$scope', function ($scope) {
+	app.controller('userController', ['$scope', 'UserCrudService', function ($scope, userCrudService) {
 			$scope.user = {};
 			$scope.showForm = false;
-			this.showForm = function () {
+			$scope.enableForm = function () {
 				$scope.showForm = true;
 			};
-			this.save = function () {
-				alert("Guardado: " + $scope.user.firstName + " " + $scope.user.lastName);
-			};
+			for (var att in userCrudService) {
+				$scope[att] = userCrudService[att];
+			}
 		}]);
 
 	app.directive('userForm', [function () {
