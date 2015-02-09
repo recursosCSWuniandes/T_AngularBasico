@@ -2,8 +2,9 @@
 	var userModule = angular.module('userModule');
 	
 	userModule.factory('UserCrudService',['CRUDService', function(crudService){
-			function UserCrud(){};
-			UserCrud.prototype = crudService;
-			return new UserCrud();
+			var userService = crudService.extend(function(){
+				
+			});
+			return userService;
 	}]);
 })();

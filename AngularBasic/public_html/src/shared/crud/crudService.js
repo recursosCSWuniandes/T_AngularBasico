@@ -62,5 +62,8 @@
 				self.currentRecord = data;
 			});
 		};
+		this.extend = function(child){
+			return App.Utils.extend(child,this);
+		};
 	}]);
 })();

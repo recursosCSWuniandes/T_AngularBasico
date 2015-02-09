@@ -7,9 +7,7 @@
 			$scope.enableForm = function () {
 				$scope.showForm = true;
 			};
-			for (var att in userCrudService) {
-				$scope[att] = userCrudService[att];
-			}
+			App.Utils.extend($scope, userCrudService);
 		}]);
 
 	app.directive('userForm', [function () {
